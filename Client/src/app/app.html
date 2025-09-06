@@ -1,0 +1,19 @@
+<h3 class="mb-4">{{ title() }}</h3>
+
+<div class="container">
+  <div class="row g-3">
+    @for (member of members(); track $index) {
+      <div class="col-12">
+        <div class="d-flex align-items-center border rounded p-3 bg-light">
+          <img 
+            [src]="member.imageUrl || 'assets/user.jfif'" 
+            alt="User Image" 
+            class="rounded-circle me-3"
+            style="width: 60px; height: 60px; object-fit: cover;"
+          />
+          <span class="fs-5 fw-semibold">{{ member.displayName }}</span>
+        </div>
+      </div>
+    }
+  </div>
+</div>

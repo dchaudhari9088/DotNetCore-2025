@@ -6,9 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")] //localhost:paort/api/Members
-    [ApiController]
-    public class MembersController : ControllerBase
+   
+    public class MembersController : BaseApiController
     {
         private readonly AppDbContext _dbContext;
         public MembersController(AppDbContext context)
@@ -16,6 +15,10 @@ namespace API.Controllers
             _dbContext = context;
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
 
         [HttpGet]
         public async Task<ActionResult<IReadOnlyList<AppUser>>> GetMembers()
