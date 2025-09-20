@@ -1,10 +1,10 @@
-<h3 class="mb-4">{{ title() }}</h3>
-
-<div class="container">
+<app-nav />
+   <div class="col-md-6 mx-auto">
+  <h3 class="mb-4">{{ title() }}</h3>
   <div class="row g-3">
     @for (member of members(); track $index) {
-      <div class="col-12">
-        <div class="d-flex align-items-center border rounded p-3 bg-light">
+      <div class="">
+        <div class="d-flex align-items-center border rounded p-3">
           <img 
             [src]="member.imageUrl || 'assets/user.jfif'" 
             alt="User Image" 

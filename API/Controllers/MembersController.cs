@@ -1,11 +1,13 @@
 using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
+    //[Authorize]
    
     public class MembersController : BaseApiController
     {
@@ -31,7 +33,7 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<AppUser>> GetOneMember([FromRoute] string id)
         {
-            var user =await _dbContext.Users.FindAsync(id);
+            var user = await _dbContext.Users.FindAsync(id);
 
             if (user == null) return NotFound();
             return user;

@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-title">Sign up</div>
+  <div class="card-body">
+    <form #regiterForm="ngForm" (ngSubmit)="register()">
+      <input name="email" [(ngModel)]="creds.email" placeholder="email" required />
+      <input
+        name="displayName"
+        [(ngModel)]="creds.displayName"
+        placeholder="displayName"
+        required
+      />
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="creds.password"
+        placeholder="Password"
+        required
+      />
+
+      <div class="flex justify-end mt-2 gap-2">
+        <button type="button" (click)="cancel()">Cancel</button>
+        <button type="submit" [disabled]="regiterForm.invalid">Register</button>
+      </div>
+    </form>
+  </div>
+</div>
